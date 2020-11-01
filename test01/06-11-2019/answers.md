@@ -40,7 +40,7 @@
 
 ## Question 4
 ### 4.a) Weakest preconditions
-
+ ```
  1:  {x ≥ 0}     
  2:  {?}  
  3:  z := x;  
@@ -56,7 +56,8 @@
 13:        {z + y = x ∧ z ≥ 0 ∧ 0 ≤ z < V0}  // I ∧ 0 ≤ V < V0    
 14:  {z = 0∧ z + y = x ∧ z ≥ 0}  // ¬ C ∧ I   
 15:  {x = y}  
-
+ ```
+ 
 ### 4.b) Implications 
 
 * 1 ⇒ 2
