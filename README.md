@@ -8,11 +8,16 @@ Repository of code developed for the course MFES @FEUP.
 
 
 ### Table of Contents
+* [**TP01**](#tp01)
 * [**TP02**](#tp02)
 * [**TP03**](#tp03)
 * [**TP04**](#tp04)
 * [**TP05**](#tp05)
 
+#### TP01
+* **Content**: Exercises on program verification with Hoare Logic
+* **Specification** : [English](specifications/tp01.pdf)
+* **Resolution** : [TP01](tp01)
 
 #### TP02
 * **Content**: Exercises on the verification of simple imperative programs with Hoare logic and Dafny
