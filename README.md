@@ -15,18 +15,22 @@ Repository of code developed for the course MFES @FEUP.
 
 
 #### TP02
+* **Content**: Exercises on the verification of simple imperative programs with Hoare logic and Dafny
 * **Specification** : [English](specifications/tp02.pdf)
 * **Source Code** : [TP02](tp02)
 
 #### TP03
+* **Content**: Exercises on program verification with arrays and quantifiers in Dafny
 * **Specification** : [English](specifications/tp03.pdf)
 * **Source Code** : [TP03](tp03)
 
 #### TP04
+* **Content**: Exercises on design by contract and verification of object-oriented programs in Dafny (Part I)
 * **Specification** : [English](specifications/tp04.pdf)
 * **Source Code** : [TP04](tp04)
 
 #### TP05
+* **Content**: Exercises on design by contract and verification of object-oriented programs in Dafny (Part II)
 * **Specification** : [English](specifications/tp05.pdf)
 * **Source Code** : [TP05](tp05)
 
