@@ -16,14 +16,17 @@ Repository of code developed for the course MFES @FEUP.
 
 #### TP02
 * **Specification** : [English](specifications/tp02.pdf)
-* **Source Code** : [tp02](tp02)
+* **Source Code** : [TP02](tp02)
 
 #### TP03
 * **Specification** : [English](specifications/tp03.pdf)
+* **Source Code** : [TP03](tp03)
 
 #### TP04
 * **Specification** : [English](specifications/tp04.pdf)
+* **Source Code** : [TP04](tp04)
 
 #### TP05
 * **Specification** : [English](specifications/tp05.pdf)
+* **Source Code** : [TP05](tp05)
 
