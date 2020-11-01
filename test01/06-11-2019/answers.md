@@ -4,10 +4,10 @@
 
 **Which of the following Hoare triples is FALSE?**
 
-**a.** {x > 2} skip {x > 1}
-**b.** {true} if x ≥ 0 then y := x else y := -x {y > 0}
-**c.** {x > 1} x := x + 1 {x > 2}
-**d.** {i > 0} while i > 0 do i := i - 1 {i = 0}
+**a.** {x > 2} skip {x > 1}  
+**b.** {true} if x ≥ 0 then y := x else y := -x {y > 0}  
+**c.** {x > 1} x := x + 1 {x > 2}  
+**d.** {i > 0} while i > 0 do i := i - 1 {i = 0}  
 
 **Answer:**
 
@@ -16,10 +16,10 @@
 **Which of the following Hoare triples is FALSE?**
 [Hint: In case of doubt, calculate the weakest precondition.]
 
-**a.** {true} y := x; y := x + x + y {y = 3x}
-**b.** {y > 1} z := x; y := y - z {x > y}
-**c.** {x > 1} z := 1; y := x - z {x > y}
-**d.** {x > 0} x :=  x + y; y := x - y {y > 0}
+**a.** {true} y := x; y := x + x + y {y = 3x}  
+**b.** {y > 1} z := x; y := y - z {x > y}  
+**c.** {x > 1} z := 1; y := x - z {x > y}  
+**d.** {x > 0} x :=  x + y; y := x - y {y > 0}  
 
 **Answer:**
 
@@ -31,31 +31,31 @@
    ```
 [Hint: the given conditional statement is equivalent to x := max(a, b).]
 
-**a.** x > 0
-**b.** a > 0 ∨ b > 0
-**c.** a > 0 ∧ b > 0
-**d.** true 
+**a.** x > 0  
+**b.** a > 0 ∨ b > 0  
+**c.** a > 0 ∧ b > 0  
+**d.** true  
 
 **Answer:**
 
 ## Question 4
 ### 4.a) Weakest preconditions
 
- 1:  {x ≥ 0}  
- 2:  {?}
- 3:  z := x;
- 4:  {?}
- 5:  y := 0; 
- 6:  {z + y = x ∧ z ≥ 0}  // I 
- 7:  while z ≠ 0 do 
- 8:        {z ≠ 0 ∧  z + y = x ∧ z ≥ 0 ∧ z = V0}  // C ∧ I ∧ V = V0
- 9:        {?}   
-10:        y := y+1;
-11:       {?} 
-12:        z := z−1
-13:        {z + y = x ∧ z ≥ 0 ∧ 0 ≤ z < V0}  // I ∧ 0 ≤ V < V0  
-14:  {z = 0∧ z + y = x ∧ z ≥ 0}  // ¬ C ∧ I 
-15:  {x = y}
+ 1:  {x ≥ 0}     
+ 2:  {?}  
+ 3:  z := x;  
+ 4:  {?}  
+ 5:  y := 0;   
+ 6:  {z + y = x ∧ z ≥ 0}  // I   
+ 7:  while z ≠ 0 do   
+ 8:        {z ≠ 0 ∧  z + y = x ∧ z ≥ 0 ∧ z = V0}  // C ∧ I ∧ V = V0  
+ 9:        {?}     
+10:        y := y+1;  
+11:       {?}   
+12:        z := z−1  
+13:        {z + y = x ∧ z ≥ 0 ∧ 0 ≤ z < V0}  // I ∧ 0 ≤ V < V0    
+14:  {z = 0∧ z + y = x ∧ z ≥ 0}  // ¬ C ∧ I   
+15:  {x = y}  
 
 ### 4.b) Implications 
 
