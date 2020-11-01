@@ -15,14 +15,14 @@ Repository of code developed for the course MFES @FEUP.
 
 
 #### TP02
-* **Specification** : [Portuguese]
+* **Specification** : [Portuguese](specifications/tp02.pdf)
 
 #### TP03
-* **Specification** : [Portuguese]
+* **Specification** : [Portuguese](specifications/tp03.pdf)
 
 #### TP04
-* **Specification** : [Portuguese]
+* **Specification** : [Portuguese](specifications/tp04.pdf)
 
-#### TP04
-* **Specification** : [Portuguese]
+#### TP05
+* **Specification** : [Portuguese](specifications/tp05.pdf)
 
