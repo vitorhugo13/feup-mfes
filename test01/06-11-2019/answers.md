@@ -9,7 +9,7 @@
 **c.** {x > 1} x := x + 1 {x > 2}  
 **d.** {i > 0} while i > 0 do i := i - 1 {i = 0}  
 
-**Answer:** B
+**Answer:** B  
 **Justification:** to prove that a Hoare triple is false, just find a counter example.  
 E.g: if x = 0, y will be 0 and it's not > 0.
 
@@ -23,7 +23,7 @@ E.g: if x = 0, y will be 0 and it's not > 0.
 **c.** {x > 1} z := 1; y := x - z {x > y}  
 **d.** {x > 0} x :=  x + y; y := x - y {y > 0}  
 
-**Answer:** B
+**Answer:** B  
 **Justification:** to prove that a Hoare triple is false, just find a counter example.  
 E.g: if x < 0, y will be > x.  
 
@@ -41,7 +41,7 @@ E.g: if x < 0, y will be > x.
 **c.** a > 0 ∧ b > 0  
 **d.** true  
 
-**Answer:** B
+**Answer:** B  
 **Justification:** ``` wp(if C then S else T, Q)  =  C ∧ wp(S,Q) ∨  ¬C ∧ wp(T,Q)``` = a > 0 ∨ b > 0
 
 ## Question 4
