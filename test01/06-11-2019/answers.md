@@ -66,19 +66,19 @@ E.g: if x < 0, y will be > x.
  
 ### 4.b) Implications 
 
-* 1 ⇒ 2
-x ≥ 0 ⇒ x = x ∧ x ≥ 0 
-⇔ x ≥ 0 ⇒ x ≥ 0
-⇔ true
+* 1 ⇒ 2  
+x ≥ 0 ⇒ x = x ∧ x ≥ 0   
+⇔ x ≥ 0 ⇒ x ≥ 0  
+⇔ true  
 
-* 8 ⇒ 9
-z ≠ 0 ∧  z + y = x ∧ z ≥ 0 ∧ z = V0 ⇒ z-1+y+1 = x ∧ z-1 ≥ 0 ∧ 0 ≤ z-1 < V0
-⇔ z > 0 ∧  z + y = x  ∧ z = V0 ⇒ z + y = x ∧ z ≥ 1 ∧ 0 ≤ z-1 < V0
-⇔ z > 0 ∧  z + y = x  ∧ z = V0 ⇒ z + y = x ∧ z ≥ 1 ∧ 0 ≤ V0-1 < V0
-⇔ z > 0 ∧  z + y = x  ∧ z = V0 ⇒ z + y = x ∧ z ≥ 1 ∧ true
-⇔ true
+* 8 ⇒ 9  
+z ≠ 0 ∧  z + y = x ∧ z ≥ 0 ∧ z = V0 ⇒ z-1+y+1 = x ∧ z-1 ≥ 0 ∧ 0 ≤ z-1 < V0  
+⇔ z > 0 ∧  z + y = x  ∧ z = V0 ⇒ z + y = x ∧ z ≥ 1 ∧ 0 ≤ z-1 < V0  
+⇔ z > 0 ∧  z + y = x  ∧ z = V0 ⇒ z + y = x ∧ z ≥ 1 ∧ 0 ≤ V0-1 < V0  
+⇔ z > 0 ∧  z + y = x  ∧ z = V0 ⇒ z + y = x ∧ z ≥ 1 ∧ true  
+⇔ true  
 
-* 14 ⇒ 15
-z = 0 ∧ z + y = x ∧ z ≥ 0 ⇒ x = y
-⇔ z = 0 ∧ x = y ⇒ x = y
-⇔ true
+* 14 ⇒ 15  
+z = 0 ∧ z + y = x ∧ z ≥ 0 ⇒ x = y  
+⇔ z = 0 ∧ x = y ⇒ x = y  
+⇔ true  
