@@ -24,7 +24,7 @@
 
 ## Question 3
 
-**Which of the following expressions gives the weakest precondition of the following Hoare triple?**
+**Which of the following expressions gives the weakest precondition of the following Hoare triple?**  
 ``` {wp} while r >= d  do r := r - d {0 ≤ r ∧ r < d} ```
 
 **a.** r >= 0 ∧ d > 0  
