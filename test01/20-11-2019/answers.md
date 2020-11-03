@@ -20,7 +20,7 @@
 **c.** {true} z := 1; y := x - z {x < y}
 **d.** {true} y := x; y := x + x + y {y > x}
 
-**Answer:** D  
+**Answer:** A  
 
 ## Question 3
 
