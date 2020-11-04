@@ -20,14 +20,28 @@ class {:autocontracts} HashSet<T(==)> {
   const initialCapacity := 101;
 
   // Predicate that formalizes the class invariant.
-  predicate Valid() { true }  // TODO c) predicate body
+  predicate Valid() { 
+    //(i) the relationship between the abstract state variable (elems) and the concrete state variable (hashTable) is properly defined; 
+    |elems| == hashTable.Length 
+    && elems == (set i| 0 <=i<hashTable.Length && hashTable[i] != Nil :: hashTable[i].value)
+    //(ii) the size of hash table is not zero; 
+    && hashTable.Length != 0
+    //(iii) the values are stored in the hash table following the open addressing strategy with linear probing.
+    // very difficult, I didn't even try
+  }
 
   // Receives the hash function to be used and initializes the set as empty.
   constructor (hash: HashFunction<T>)
+    ensures elems == {}
+    ensures this.hash == hash
   // TODO a) post-condition
 
   // Inserts a new element x into this hash set.
   method insert(x : T)
+    requires |elems| < initialCapacity
+    requires x !in elems
+    ensures elems == old(elems) + {x}
+    ensures |elems| == |elems| + 1
   // TODO b) pre and post-conditions
 
   // Method that checks if this hash set contains an element x.
