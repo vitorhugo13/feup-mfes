@@ -5,7 +5,7 @@ type T = nat
 // for 0 <= k <= m, where 'm' denotes the maximum value in 'a'.
 method makeBuckets(a: array<T>) returns(b: array<nat>) 
   requires a.Length > 0 //5.a
-  ensures b.Length > 0 && isMax(b.Length - 1, a[..])
+  ensures b.Length > 0 && isMax(b.Length - 1, a[..]) && b.Length == findMax(a[..]) + 1
   ensures forall k :: 0 <= k < b.Length ==> b[k] == count(k, a[..]) 
 {
    var max := findMax(a[..]);
