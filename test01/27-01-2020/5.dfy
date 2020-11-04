@@ -3,12 +3,20 @@ type T = nat
 // Given a non-empty array 'a' of natural numbers, generates a new array ‘b’ 
 // (buckets) such that b[k] gives the number of occurrences of 'k' in 'a',
 // for 0 <= k <= m, where 'm' denotes the maximum value in 'a'.
-method makeBuckets(a: array<T>) returns(b: array<nat>) {
+method makeBuckets(a: array<T>) returns(b: array<nat>) 
+  requires a.Length > 0 //5.a
+  ensures b.Length > 0 && isMax(b.Length - 1, a[..])
+  ensures forall k :: 0 <= k < b.Length ==> b[k] == count(k, a[..]) 
+{
    var max := findMax(a[..]);
    b := new T[1 + max];
    forall k | 0 <= k <= max { b[k] := 0; }
    var i := 0;
-   while i < a.Length {
+   while i < a.Length 
+    decreases a.Length - i
+    invariant 0 <= i <= a.Length
+    invariant forall k :: 0 <= k < b.Length ==> b[k] == count(k, a[..i])
+   {
      b[a[i]] := b[a[i]] + 1; 
      i := i + 1;
    } 
