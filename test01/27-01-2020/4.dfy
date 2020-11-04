@@ -6,9 +6,15 @@ method calcF(n: nat) returns (res: nat)
 {
   var a, b, c := 0, 1, 2;
   var i := 0;
-  while i < n {
+  while i < n 
+    decreases n - i //4.a
+    invariant 0 <= i <= n //4.b
+    invariant a == F(i) && b == F(i+1) && c == F(i+2)
+  {
     a, b, c := b, c, a + c;        
     i := i + 1;
   }
   res := a;
 }
+
+
