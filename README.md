@@ -8,11 +8,16 @@ Repository of code developed for the course MFES @FEUP.
 
 
 ### Table of Contents
+* [**TEST01**](#test01)
 * [**TP01**](#tp01)
 * [**TP02**](#tp02)
 * [**TP03**](#tp03)
 * [**TP04**](#tp04)
 * [**TP05**](#tp05)
+
+#### TEST01
+* **Content**: Some solved tests from previous years
+* **Resolution** : [TEST01](test01)
 
 #### TP01
 * **Content**: Exercises on program verification with Hoare Logic
