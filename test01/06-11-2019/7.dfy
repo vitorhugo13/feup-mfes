@@ -31,3 +31,4 @@ class {:autocontracts} BSTNode {
         else { res := false; }
     }
 }
+
