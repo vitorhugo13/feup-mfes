@@ -1,16 +1,21 @@
 type T = int
 
+//Use binary search to find an appropriate position to insert a value 'x'
+// in a sorted array 'a', so that it remains sorted.
 method binarySearch(a: array<T>, x: T) returns(index: int)
     requires a.Length > 0
     requires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]
     ensures 0 <= index <= a.Length
-    ensures forall i :: 0 <= i < index ==> a[i] <= x
-    ensures index < a.Length ==> forall i:: index <= i < a.Length ==> a[i] >= x
+    ensures multiset(a[..]) == multiset(old(a[..]))
+    ensures index > 0 ==> a[index-1] <= x
+    ensures index < a.Length ==> a[index] >= x
 {
     var low, high := 0, a.Length;
     while low < high
         decreases high - low
-        invariant 0 <= low <= high
+        invariant 0 <= low <= high <= a.Length
+        invariant low > 0 ==> a[low-1] <= x
+        invariant high < a.Length ==> a[high] >= x
     {
         var mid := low + (high - low) / 2;
 

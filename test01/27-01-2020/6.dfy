@@ -26,7 +26,11 @@ class {:autocontracts} HashSet<T(==)> {
     //(ii) the size of hash table is not zero; 
     && hashTable.Length != 0
     //(iii) the values are stored in the hash table following the open addressing strategy with linear probing.
-    // very difficult, I didn't even try
+    && forall i :: 0 <= i < hashTable.Length && hashTable[i] != Nil ==>
+        var h := hash(hashTable[i].value) % hashTable.Length;
+        h == i  
+        || (h < i && forall j :: h <= j < i ==>  hashTable[j] != Nil && hashTable[j] != hashTable[i])
+        || (h > i && forall j :: h <= j < hashTable.Length || 0 <= j < i ==> hashTable[j] != Nil && hashTable[j] != hashTable[i])
   }
 
   // Receives the hash function to be used and initializes the set as empty.
