@@ -4,11 +4,11 @@ type T = int
 // in a sorted array 'a', so that it remains sorted.
 method binarySearch(a: array<T>, x: T) returns(index: int)
     requires a.Length > 0
-    requires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j]
+    requires forall i, j :: 0 <= i < j < a.Length ==> a[i] <= a[j] //menas array 'a' must be sorted
     ensures 0 <= index <= a.Length
     ensures multiset(a[..]) == multiset(old(a[..]))
-    ensures index > 0 ==> a[index-1] <= x
-    ensures index < a.Length ==> a[index] >= x
+    ensures index > 0 ==> a[index-1] <= x //position before index must be less or equal than x
+    ensures index < a.Length ==> a[index] >= x //position after index must be greater or equal than x
 {
     var low, high := 0, a.Length;
     while low < high

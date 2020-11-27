@@ -1,0 +1,114 @@
+1)  First Order Logic
+
+a)
+
+	a) Verdade
+	b) Verdade
+	c) pela tabela de verdade da implicação: Verdade
+	d) pela tabela de verdade da implicação: Verdade
+	e) Verdade
+	f) Verdade (por exemplo m = 0)
+	g) Verdade
+
+	
+c)
+
+	a) queremos substituir todas as variaveis y na expresao x < y por y + 1 = x < y + 1
+	b) substituir tudo o que esta mais À direita pelo que esta mais à esquerda = x + 1 < y + 1
+	d) x < z + 1 => x < z
+	e) expressao com qualquer quantificador(existencial ou universal) com a variavel para ser subtituida não é subtituida( não ha lugar a substituição, fica tudo igual)
+	f) trocar w por m + 1 pois este nao está associado a nenhum quantificador
+	g) trocar m também, nao está associado a quantificador
+	h) também pode trocar
+	i) podemos trocar o n por m  + 1 em n = 5, mas na parte do quantificador nao se troca nada
+	
+--------------------------------------------------------------------------------------------
+2) Set theory (podemos testar no wolfram alpha)
+
+a)
+	a){Charlie, Max, Oscar, Rocky, Bella, Garfield}
+	b){}
+	c){Charlie, Max, Oscar, Rocky, Bella, Garfield} 
+	d){{},{Charlie}, {Charlie,Max}, {Charlie, Oscar},{Charlie, Rocky}, etc...} (todas as combinações possiveis =>  2⁴ elementos = 16)
+	e)juntar powersets dos 2
+	f) fazer uniao e só depois powerset da união
+	g) conjunto que contem o conjunto vazio = {{}}
+	h) produto cartesiano  =>  {(Charlie, Bella), (Charlie, Garfield), … (Rocky, Garfield)}
+	i) power set de prod.cartesiano = conjunto de um conjunto de pares
+	
+
+b)
+	a) V
+	b) F -> tem de ser {Bella} c Cats
+	c) F
+	d) F
+	e) F
+	f) V
+	o) V -> vazio faz sempre parte do powerSet
+	p) V
+	q) V
+	r) V
+	
+-------------------------------------------------------------------------------------------	
+3) Relations
+
+1)
+	a) Dominio = {Max, Oscar, Zoey, Garfield, Simba} //1º elemento do par
+	b) Range = {Yorkshire, Sheepdog, Siamese} //2º elemento do par
+	c) Restringir elementos da relação aos elementos em que o dominio esta no DOGS -> {{max, york},{zoey,sheepdog}}
+	d) O mesmo de cima mas para o contradominio -> {{max, york}, e aqueles com siamese na direita}
+	e)Retorna os 2º elementos que tem como 1º elemento do par Oscar, Simba e Rocky
+	g) -1 é a inversa( dominio passa a contra dominio e vice-versa)
+
+-------------------------------------------------------------------------------------------	
+4) Specification of Properties
+
+	1) forall x1 \in Animals . forall (x1,y1), (x2,y2) in animal-species x1 = x2 ==> y1 = y2
+	ou forall a in Animals. exists_1 s in Species. (a,s) in animal-species
+	ou forall a \in Animals . |{ s | (a, s) \in animal-species }| = 1
+	2) forall (x1,y1), (x2,y2) in animal-habitats x1 = x2 ==> y1 = y2
+	3) forall h in habitats. exists a in Animals. (a,h) in animal-habitats
+	ou forall h in Habitats. |{a | a in Animals and (a, h) in animal-habitats}| >= 1
+	4) forall h in Habitats. |{a | a in Animals and (a, h) in animal-habitats}| <= 100
+	8) forall (x1,y1), (x2,y2) in coordinator-habitat x1 = x2 ==> y1 = y2
+	
+	
+	
+ALLOY
+Um fact é algo que é sempre verdadeiro!
+Predicado: pode haver alturas em que é falso e outras vezes verdadeiro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
