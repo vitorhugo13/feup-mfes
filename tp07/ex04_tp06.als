@@ -27,7 +27,7 @@ fact{
 sig Species{
 }
 
-one sig Habitats{ //gerar sempre instancias que têm 1 ou + habitats (poderiamos meter o mesmo para os outros)
+some sig Habitats{ //gerar sempre instancias que têm 1 ou + habitats (poderiamos meter o mesmo para os outros)
     veterinariesHabitat: set Veterinaries,
     coordinatorHabitat: one veterinariesHabitat  //7. Each habitat of the Zoo has a single coordinator.
                                                 //10. The coordinator of an habitat is a veterinary of that habitat.
