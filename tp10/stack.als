@@ -74,7 +74,7 @@ assert popThenPush {
   	//pre.s1 dá todos os eventos antes de s1(state1). 
   	//no entanto esses eventos podem ser push ou pop, 
   	//para restringir a Pop fazemos pre.s1 <: Pop
-  
+    //last é para ao criar os pares nao fazer par com o ultimo elem e algo que nao existe
   	all s: StackState - last | let s1 = s.next |
   		(some pre.s1 <: Push and some pre.s <: Pop) implies (pre.s <: Pop).value = (pre.s1 <: Push).value
 }
