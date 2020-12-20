@@ -14,6 +14,11 @@ Repository of code developed for the course MFES @FEUP.
 * [**TP03**](#tp03)
 * [**TP04**](#tp04)
 * [**TP05**](#tp05)
+* [**TP06**](#tp06)
+* [**TP07**](#tp07)
+* [**TP08**](#tp08)
+* [**TP09**](#tp08)
+* [**TP10**](#tp10)
 
 #### TEST01
 * **Content**: Some solved tests from previous years
@@ -44,3 +49,23 @@ Repository of code developed for the course MFES @FEUP.
 * **Specification** : [English](specifications/tp05.pdf)
 * **Source Code** : [TP05](tp05)
 
+#### TP06
+* **Content**: Exercises on First Order Logic (FOL) and Set Theory
+* **Source Code** : [TP06](tp06)
+
+#### TP07
+* **Content**: Getting familiar with Alloy
+* **Source Code** : [TP07](tp07)
+
+#### TP08
+* **Content**: Modulation of a file system in Alloy
+* **Source Code** : [TP08](tp08)
+
+
+#### TP09
+* **Content**: Graphs in Alloy and Labeled Transition Systems
+* **Source Code** : [TP09](tp09)
+
+#### TP10
+* **Content**: Use event idiom to module a Stack
+* **Source Code** : [TP10](tp10)
