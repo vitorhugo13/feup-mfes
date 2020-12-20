@@ -22,11 +22,11 @@ Repository of code developed for the course MFES @FEUP.
 * [**TP10**](#tp10)
 
 #### TEST01
-* **Content**: Some solved tests from previous years. Test includes content from tp01 to tp05(Dafny).
+* **Content**: Some solved tests from previous years. Test includes content from tp01 to tp05 (Dafny).
 * **Resolution** : [TEST01](test01)
 
 #### TEST02
-* **Content**: Some solved tests from previous years. Test includes content from tp06 to tp10(Alloy).
+* **Content**: Some solved tests from previous years. Test includes content from tp06 to tp10 (Alloy).
 * **Resolution** : [TEST02](test02)
 
 #### TP01
