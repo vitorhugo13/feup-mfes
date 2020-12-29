@@ -56,6 +56,7 @@ Each event is available in at least a state.
 pred inv6 {
 	//all e: Event | e in (State.trans).State
   	State.trans.State = Event
+	//all e:Event | some e.(State.trans)
 }
 
 /*
