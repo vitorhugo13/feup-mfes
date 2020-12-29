@@ -21,3 +21,12 @@
 - the explicit facts: all g: DAG | no n: Node | n in n.^(g.edge)
 - the constraints implicit in field and arguments declaration: g: DAG, g': DAF, e: Node->Node, edge: DAG->Node->Node
 - the constraints implicit in the signatures: no DAG & Edge
+
+## Group III
+### Question 1
+### Question 2
+
+## Group IV
+### Question 1
+### Question 2
+### Question 3
