@@ -24,7 +24,9 @@
 
 ## Group III
 ### Question 1
+* view source code [here](https://github.com/vitorhugo13/feup-mfes/blob/main/test02/specimen/group3-question1.als)
 ### Question 2
+* view source code [here](https://github.com/vitorhugo13/feup-mfes/blob/main/test02/specimen/group3-question2.als)
 
 ## Group IV
 ### Question 1
