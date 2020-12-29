@@ -32,9 +32,9 @@
 ### Question 1
 * Skolemization is a technique that Alloy uses to remove everything that is existential / universal quantifiers from a given formula, so that that formula contains only 1st order constructors. Skolemization is simply making implicit and explicit existential / universal quantification. Skolemization is used by Alloy to be able to have functions in propositional logic that solves in a + fast / optimized way.
 
-As mentioned, Alloy uses this technique when converting from relational to propositional logic. This conversion is done to allow a SAT-solver to find instances of the model.
+* As mentioned, Alloy uses this technique when converting from relational to propositional logic. This conversion is done to allow a SAT-solver to find instances of the model.
 
-Skolemization allows you to solve models in a more efficient and scalable way, causes witnesses to be generated for existentially quantified variables.
+* Skolemization allows you to solve models in a more efficient and scalable way, causes witnesses to be generated for existentially quantified variables.
 
 ### Question 2
 * No, Alloy logic is considered **undecidable**. A decidable logic is a logic where is always possible to guarantee that the automatic analyzer  will find an instance or a counterexample. Since in Alloy that is not possible to build an automated tool that can tell us, with perfect reliability, whether an assertion is valid- that is, holds for every possible assignment, we say Alloy's logic is undecidable. Some compromise is therefore necessary.
