@@ -30,5 +30,14 @@
 
 ## Group IV
 ### Question 1
+* Skolemization is a technique that Alloy uses to remove everything that is existential / universal quantifiers from a given formula, so that that formula contains only 1st order constructors. Skolemization is simply making implicit and explicit existential / universal quantification. Skolemization is used by Alloy to be able to have functions in propositional logic that solves in a + fast / optimized way.
+
+As mentioned, Alloy uses this technique when converting from relational to propositional logic. This conversion is done to allow a SAT-solver to find instances of the model.
+
+Skolemization allows you to solve models in a more efficient and scalable way, causes witnesses to be generated for existentially quantified variables.
+
 ### Question 2
+* No, Alloy logic is considered **undecidable**. A decidable logic is a logic where is always possible to guarantee that the automatic analyzer  will find an instance or a counterexample. Since in Alloy that is not possible to build an automated tool that can tell us, with perfect reliability, whether an assertion is valid- that is, holds for every possible assignment, we say Alloy's logic is undecidable. Some compromise is therefore necessary.
+
 ### Question 3
+* Scopes are used to limit the size of the instances to be considered in the models. Alloy uses this notion to find instances for the model being analysed. The default scope for top-level signatures is 3, which means that the alloy will generate for these signatures up to a maximum of 3 instances. These values can be changed in the run or check command.The notion of scope is imported, since we may want to prove that our model is correct for larger "environments". It should be noted that if a counterexample is found in a certain scope, that same counterexample will be in larger scopes, however it may not be present in a smaller scope. Likewise, if there is an instance in a given scope, there is also an instance in a larger scope (p.167). The larger the scope, the more confidence is warranted, but the longer the analysis will take. At some point, the analysis becomes intolerably slow (pg.165)
