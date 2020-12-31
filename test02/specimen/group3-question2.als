@@ -21,13 +21,15 @@ pred init(t: Time2){
 }
 
 pred delete(t, t2: Time2, n: Node, l: List){ //(d)
-  //pre
-  n in (l.head.Time2).^(next.Time2)
+  //pre-condition
+  n in (l.head.t).^(next.t)
+  
   //delete
-  //TODO: remove node n
-  //pos
-  n not in (l.head.Time2).^(next.Time2)
-  //TODO: cheching if order is mantained and if all the nodes except n is in the list
+  (l.head.t2).^(next.t2) = (l.head.t).^(next.t) - n
+  
+  //post-conditions
+  n not in (l.head.t2).^(next.t2)
+  all n: (l.head.t2).^(next.t2), n2: (l.head.t).^(next.t) - n | (n.next).Time2 = (n2.next).Time2
 }
  
 pred insert(n: Node){ // (e)
@@ -42,11 +44,11 @@ fact traces{ // (e)
 
 assert checkOrder{ // (f)
   all l: List | (l.head).Time2.value =< (l.head).Time2.next.Time2.value //head <= next  
-  all n: (List.head.Time2).^(next.Time2) |  n.value =< n.next.Time2.value //element <= element-next
+  all n: (List.head.Time2).^(next.Time2) |  n.value =< n.next.Time2.value //element <= element.next
 
 }
 
 check checkOrder for 4 but 6 Time2 //(f)
 
-run {}
+run {} for 4 but 6 Time2
 
