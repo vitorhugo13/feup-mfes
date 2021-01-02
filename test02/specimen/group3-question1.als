@@ -24,5 +24,3 @@ pred wellFormedTree{
 }
 
 run {} for 4 but 7 Node
-
-//aloy4fun: http://alloy4fun.inesctec.pt/ooRhAcjMtz3on9FdJ
