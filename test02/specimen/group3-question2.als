@@ -1,26 +1,34 @@
-open util/ordering[Time2] // (a)
+// Note: Some auxiliar functions, such as, elements and previousElement are authored by David Silva (https://github.com/daviddias99)
 
-sig Time2{} // (a)
+open util/ordering[Time] // (a)
+
+sig Time{} // (a)
 
 one sig List{
-	head: Node->Time2  // (b)
+	head: Node lone ->Time  // (b)
 }
 
 sig Node{
-	next: Node->Time2, // (b)
-  	value: Int
+	next: Node lone-> Time, // (b)
+  value: Int
 }
 
-fact{ // (b) restrictions as facts 
- 	all l: List | lone l.head
-  	all n: Node | lone n.next
-}
-
-pred init(t: Time2){
+pred init(t: Time){
 	no List.head //(c)
 }
 
-pred delete(t, t2: Time2, n: Node, l: List){ //(d)
+//retrieves set of Nodes after n
+fun elements(n: Node, t: Time): set Node{
+  {(n.*(next.t))}
+}
+
+//retrieves element before n
+fun previousElement(n: Node, t: Time): Node{
+  {(next.t).n}
+}
+
+/*
+pred delete(t, t2: Time, n: Node, l: List){ //(d)
   //pre-condition
   n in (l.head.t).^(next.t)
   
@@ -29,26 +37,40 @@ pred delete(t, t2: Time2, n: Node, l: List){ //(d)
   
   //post-conditions
   n not in (l.head.t2).^(next.t2)
-  all n: (l.head.t2).^(next.t2), n2: (l.head.t).^(next.t) - n | (n.next).Time2 = (n2.next).Time2
+  all n: (l.head.t2).^(next.t2), n2: (l.head.t).^(next.t) - n | (n.next).Time = (n2.next).Time
 }
- 
+*/
+
+//using auxiliar functions
+pred delete2(t,t2: Time, n: Node, l: List){
+  //pre-condition (n must be in List before being removed)
+  n in elements[List.head.t,t]
+  n = l.head.t implies l.head.t2 = n.next.t else previousElement[n,t].next.t2 = n.next.t //delete n
+
+  //post-condition
+  n not in elements [List.head.t2, t2]
+  all disj n1, n2: Node - n | n2 in elements[n1,t] implies n2 in elements[n1, t2]
+}
+
 pred insert(n: Node){ // (e)
   //assume insert method is done
 }
 
 fact traces{ // (e)
     init[first]
-    all t: Time2 - last | let t2 = t.next|
-    	some n: Node, l: List | delete[t,t2,n,l] or insert[n]
+    all t: Time - last | let t2 = t.next|
+    	some n: Node, l: List | delete2[t,t2,n,l] or insert[n]
+}
+
+fact sorted{ // (f)
+  all time: Time | all disj n1, n2: Node | n2 in elements[n1,time] implies n2.value > n1.value
 }
 
 assert checkOrder{ // (f)
-  all l: List | (l.head).Time2.value =< (l.head).Time2.next.Time2.value //head <= next  
-  all n: (List.head.Time2).^(next.Time2) |  n.value =< n.next.Time2.value //element <= element.next
-
+  all time: Time | all disj n1, n2: Node | n2 in elements[n1,time] implies n2.value > n1.value
 }
 
-check checkOrder for 4 but 6 Time2 //(f)
+check checkOrder for 4 but 3 Time //(f)
 
-run {} for 4 but 6 Time2
+run {} for 4 but 6 Time
 
