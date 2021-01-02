@@ -11,7 +11,7 @@ fun parent: Node->Node{ // (a)
  	//parentNode + n->((left :> n).n + (right :> n).n) ===> restringir o range da relação right e left ao node n, deste modo a função parent irá retornar os nós nos quais n está à direita/esquerda aka o meu pai
   
   //another possible solution
-  {n, n': Node | n->n' in (n->n.left + n->n.right)}
+  {n, n': Node | n->n' in (n->left.n+ n->right.n)}
 }
 
 pred wellFormedTree{
