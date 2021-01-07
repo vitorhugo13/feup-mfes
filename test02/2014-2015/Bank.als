@@ -18,8 +18,9 @@ pred invariants[c: Client]{
 pred withdraw[c, c': Client, a: Account, qty: Int, t: Transaction]{
 	--pre-conditions
 	a in c.accounts
-	a in c.withdrawPrivileges
+	a in c.withdrawPrivileges 
 	a.(c.balance) >= qty 
+    qty > 0
 
 	--post-conditions
 	a in c'.accounts
