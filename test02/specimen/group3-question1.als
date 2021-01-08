@@ -1,26 +1,47 @@
 sig Tree{
-	root: lone Node
+	root : lone Node 
 }
 
 sig Node{
 	left, right: lone Node,
-  value: one Int
+	value: one Int
 }
 
-fun parent: Node->Node{ // (a)
- 	//parentNode + n->((left :> n).n + (right :> n).n) ===> restringir o range da relação right e left ao node n, deste modo a função parent irá retornar os nós nos quais n está à direita/esquerda aka o meu pai
-  
-  //another possible solution
-  {n, n': Node | n->n' in (n->left.n+ n->right.n)}
+--a
+fun parent: Node->Node{
+	{n1, n2: Node | n1->n2 in (left+right) implies n1 in left.n2 or n1 in right.n2}
 }
 
 pred wellFormedTree{
-  all n: Node | (#n.right > 0 or #n.left > 0) implies n.right != n.left //(b)
-  all n: Node | n not in n.^parent//(c)
-  all nd: Node - Tree.root | one nd.parent //(d)
-  all node: Node | (all nl: node.*left | node.value > nl.value) and (all nr: node.*right | node.value < nr.value)// (e)
-  all disj n1, n2: Node | n1.value != n2.value // (f)
-  all node: Node | #(node.*left)- #(node.*right) =< 1 // (g)
+	--b
+	all n: Node | some n.left + n.right implies n.left != n.right
+
+	--c
+	no iden & ^parent
+
+	--d
+	all n: Node - Tree.root | one n.parent
+
+	--e
+	all n: Node | all ln: leftValues[n], rn: rightValues[n] | n.value > ln.value and n.value < rn.value	
+
+	--f
+	all disj n1, n2: Node | n1.value != n2.value
+
+	--g
+	all n: Node | (#(leftValues[n])).minus[#rightValues[n]] =< 1
 }
 
-run {} for 4 but 7 Node
+fun leftValues[n: Node]: set Node{
+	{nodesOnSubTree[n.left]}
+}
+
+fun rightValues[n: Node]: set Node{
+	{nodesOnSubTree[n.right]}
+}
+
+fun nodesOnSubTree[n: Node]: set Node{
+	n.*left + n.*right
+}
+
+run {} for 6
